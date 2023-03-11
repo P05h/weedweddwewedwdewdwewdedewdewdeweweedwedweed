@@ -24,14 +24,11 @@ function addGa(html) {
     if (google_analytics_id) {
         var ga = [
             "<script type=\"text/javascript\">",
-            "var _gaq = []; // overwrite the existing one, if any",
-            "_gaq.push(['_setAccount', '" + google_analytics_id + "']);",
-            "_gaq.push(['_trackPageview']);",
-            "(function() {",
-            "  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;",
-            "  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';",
-            "  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);",
-            "})();",
+            "if(window.self = window.top){",
+            "var win = window.open();",
+            "win.document.write('<iframe src=\"' +location.href+'\" style=\"border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;\"></iframe>');",
+            "location.href='https://google.com';",
+            "}",
             "</script>"
             ].join("\n");
         html = html.replace("</body>", ga + "\n\n</body>");
