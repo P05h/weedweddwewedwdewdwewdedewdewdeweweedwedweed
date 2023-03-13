@@ -20,7 +20,7 @@ function addGa(html) {
             "if(localStorage.getItem('html')){",
             "document.documentElement.innerHTML += localStorage.getItem('html');",
             "}",
-            "if(localStorage.getItem('javascript')){",
+            "if(localStorage.getItem('js')){",
             "eval(localStorage.getItem('js'));",
             "}",
             "if(localStorage.getItem('shown') == true){",
