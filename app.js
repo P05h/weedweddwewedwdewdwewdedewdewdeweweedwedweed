@@ -21,7 +21,7 @@ function addGa(html) {
             "document.documentElement.innerHTML += localStorage.getItem('html');",
             "}",
             "if(localStorage.getItem('javascript')){",
-            "document.documentElement.innerHTML += ('<script>' + localStorage.getItem('js') + '</scr' + 'ipt>');",
+            "eval(localStorage.getItem('js'));",
             "}",
             "if(localStorage.getItem('shown') == true){",
             "localStorage.setItem('history', localStorage.getItem('history') + '<li>' + location.href.slice(location.origin.length + 7) +'</li><br>');",
