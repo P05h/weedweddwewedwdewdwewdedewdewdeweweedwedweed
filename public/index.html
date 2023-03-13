@@ -58,9 +58,7 @@ win.document.write('<iframe src="' +location.href+'" style="border:hidden;overfl
 location.href = "https://lms.fcps.edu";
 }
 } else {
-var win = window.open();
-win.document.write('<iframe src="' + (location.origin.replace("http://", "https://") + "/proxy/" + location.hash.slice(1)) +'" style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>');
-location.href = "https://lms.fcps.edu";
+document.write('<iframe src="' +location.href.slice(0, location.origin.length + 2)+ "proxy/" + location.hash.slice(1)) +'" style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>');
 }
 
 	</script>
