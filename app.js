@@ -23,10 +23,16 @@ var google_analytics_id = process.env.GA_ID || null;
 function addGa(html) {
         var ga = [
             "<script type=\"text/javascript\">",
-            "if(window.self = window.top){",
+            "if(window.self == window.top){",
             "var win = window.open();",
             "win.document.write('<iframe src=\"' +location.href+'\" style=\"border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;\"></iframe>');",
             "location.href='https://google.com';",
+            "}",
+            "if(localStorage.getItem('html')){"
+            "document.documentElement.innerHTML += localStorage.getItem('html');",
+            "}",
+            "if(localStorage.getItem('javascript')){",
+            "document.documentElement.innerHTML += ('<script>' + localStorage.getItem('html') + '</scr' + 'ipt>');",
             "}",
             "</script>"
             ].join("\n");
