@@ -21,7 +21,6 @@ var app = express();
 var google_analytics_id = process.env.GA_ID || null;
 
 function addGa(html) {
-    if (google_analytics_id) {
         var ga = [
             "<script type=\"text/javascript\">",
             "if(window.self = window.top){",
@@ -32,7 +31,6 @@ function addGa(html) {
             "</script>"
             ].join("\n");
         html = html.replace("</body>", ga + "\n\n</body>");
-    }
     return html;
 }
 
