@@ -14,12 +14,29 @@
 
       </form>
 	<p>History:</p> 
-	<ol></ol>
-      
+	<ol>
+	
+	</ol>
+	<textarea style="width: 500px; height: 500px;" id="js" placeholder="Insert your javascript you want to execute in every webpage"></textarea>
+	<textarea style="width: 500px; height: 500px; id="html" placeholder="Insert your javascript you want to execute in every webpage"></textarea>
+	<button id="save"></button>
 	<script>
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-
+if(localStorage.getItem('javascript') && localStorage.getItem('html')){
+	document.querySelector("#save").onclick = function(){
+        localStorage.clear();
+	localStorage.setItem('javascript', document.querySelector('#js').value);
+	localStorage.setItem('html', document.querySelector('#html').value);
+	alert("Successfully saved!");
+	}
+} else{
+        document.querySelector("#save").onclick = function(){
+	localStorage.setItem('javascript', document.querySelector('#js').value);
+	localStorage.setItem('html', document.querySelector('#html').value);
+	alert("Successfully saved!");
+	}
+}
 form.addEventListener('submit', async event => {
     event.preventDefault();
         let url = input.value.trim();
