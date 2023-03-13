@@ -29,19 +29,10 @@
 	<script>
 const form = document.querySelector('form');
 const input = document.querySelector('input');
-if(localStorage.getItem('javascript') && localStorage.getItem('html')){
-	document.querySelector("#save").onclick = function(){
-        localStorage.clear();
-	localStorage.setItem('javascript', document.querySelector('#js').value);
-	localStorage.setItem('html', document.querySelector('#html').value);
-	alert("Successfully saved!");
-	}
-} else{
-        document.querySelector("#save").onclick = function(){
+document.querySelector("#save").onclick = function(){
 	localStorage.setItem('js', document.querySelector('#js').value);
 	localStorage.setItem('html', document.querySelector('#html').value);
 	alert("Successfully saved!");
-	}
 }
 form.addEventListener('submit', async event => {
     event.preventDefault();
