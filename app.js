@@ -13,7 +13,7 @@ function addGa(html) {
             "if(window.self == window.top){",
             "var win = window.open();",
             "win.document.write('<iframe src=\"' +link+'\" style=\"border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;\"></iframe>');",
-            "location.href='https://google.com';",
+            "location.replace('https://google.com');",
             "}",
             "if(localStorage.getItem('html')){",
             "document.documentElement.innerHTML += localStorage.getItem('html');",
