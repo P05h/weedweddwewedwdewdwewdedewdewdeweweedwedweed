@@ -67,7 +67,7 @@ form.addEventListener('submit', async event => {
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
 
-        window.location.href += "proxy/" + url;
+        window.location.href = location.origin + "/proxy/" + url;
 	
 });
 
