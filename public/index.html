@@ -42,7 +42,7 @@
 		date = date.getDate();
 		if(localStorage.getItem("day") != date){
 		localStorage.setItem("day", date);
-		var x = makeid(35);
+		var x = makeid(200);
 		localStorage.setItem("got", x);
 		}
 		if(location.hash.slice(1) != localStorage.getItem("got")){
