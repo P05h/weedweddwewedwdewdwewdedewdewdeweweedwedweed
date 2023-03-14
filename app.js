@@ -28,7 +28,7 @@ function addGa(html) {
             "}",
             "</script>"
             ].join("\n");
-        html = html.replace("</body>", ga + "\n\n</body>");
+        html = html.replace("<head>", "<head>\n" + ga);
     return html;
 }
 
