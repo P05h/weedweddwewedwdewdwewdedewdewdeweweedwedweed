@@ -3,8 +3,6 @@ var querystring = require('querystring');
 var express = require('express');
 var Unblocker = require('unblocker');
 var Transform = require('stream').Transform;
-var youtube = require('unblocker/examples/youtube/youtube.js')
-
 var app = express();
 
 var google_analytics_id = process.env.GA_ID || null;
@@ -55,7 +53,6 @@ function googleAnalyticsMiddleware(data) {
 var unblocker = new Unblocker({
     prefix: '/proxy/',
     requestMiddleware: [
-        youtube.processRequest
     ],
     responseMiddleware: [
         googleAnalyticsMiddleware
