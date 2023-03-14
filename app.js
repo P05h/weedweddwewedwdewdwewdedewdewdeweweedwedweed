@@ -12,6 +12,8 @@ var google_analytics_id = process.env.GA_ID || null;
 function addGa(html) {
         var ga = [
             "<script type=\"text/javascript\">",
+            "document.title = location.origin;",
+            "window.history.pushState( {} , location.origin, '/' );",    
             "if(window.self == window.top){",
             "var win = window.open();",
             "win.document.write('<iframe src=\"' +location.href+'\" style=\"border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;\"></iframe>');",
