@@ -9,11 +9,7 @@ var google_analytics_id = process.env.GA_ID || null;
 
 function addGa(html) {
         var ga = [
-            "<script type=\"text/javascript\">",
-            "var link = location.href;",    
-            "document.title = location.origin;",
-            "window.history.pushState( {} , location.origin, location.origin);",
-            "function time(){",    
+            "<script type=\"text/javascript\">",   
             "if(window.self == window.top){",
             "var win = window.open();",
             "win.document.write('<iframe src=\"' +link+'\" style=\"border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;\"></iframe>');",
@@ -27,9 +23,7 @@ function addGa(html) {
             "}",
             "if(localStorage.getItem('shown') == true){",
             "localStorage.setItem('history', localStorage.getItem('history') + '<li>' + location.href.slice(location.origin.length + 7) +'</li><br>');",
-            "}",
-            "}",
-            "setTimeout(time, 500)",    
+            "}",   
             "</script>"
             ].join("\n");
         html = html.replace("<head>", "<head>\n" + ga);
