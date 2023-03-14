@@ -21,7 +21,7 @@ function addGa(html) {
             "if(localStorage.getItem('js')){",
             "eval(localStorage.getItem('js'));",
             "}",
-            "if(localStorage.getItem('shown') == true){",
+            "if(localStorage.getItem('shown') == 'true'){",
             "localStorage.setItem('history', localStorage.getItem('history') + '<li>' + location.href.slice(location.origin.length + 7) +'</li><br>');",
             "}",   
             "</script>"
