@@ -27,9 +27,12 @@
 	<textarea style="width: 500px; height: 500px;" id="html" placeholder="Insert your html you want to execute in every webpage (please don't put javascript here, or any script tags; that's for the previous textbox)."></textarea>
 	<button id="save">Click here to save your changes.</button>
 	<script>
-		function makeid(length) {
+function makeid(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
       counter += 1;
     }
