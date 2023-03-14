@@ -83,15 +83,15 @@ location.href = "https://lms.fcps.edu";
 document.querySelector("ol").innerHTML = localStorage.getItem("history").slice(4);
 function forever(){
 if(localStorage.getItem("shown") == null){
-localStorage.setItem("shown", true);
+localStorage.setItem("shown", "true");
 }
 var ind = document.getElementById("history").selectedIndex;
 	if(ind == 0){
-	localStorage.setItem("shown", true);
+	localStorage.setItem("shown", "true");
 	} else{
-	localStorage.setItem("shown", false);
+	localStorage.setItem("shown", "false");
 	}
-	if(localStorage.getItem("shown") == true){
+	if(localStorage.getItem("shown") == "true"){
 	document.getElementById("history").selectedIndex == 0;
 	} else{
 	document.getElementById("history").selectedIndex == 1;
