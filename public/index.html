@@ -27,11 +27,22 @@
 	<textarea style="width: 500px; height: 500px;" id="html" placeholder="Insert your html you want to execute in every webpage (please don't put javascript here, or any script tags; that's for the previous textbox)."></textarea>
 	<button id="save">Click here to save your changes.</button>
 	<script>
+		function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
 		date = new Date();
 		date = date.getDate();
 		if(localStorage.getItem("day") != date){
 		localStorage.setItem("day", date);
-		var x = Math.floor(Math.random() * 0xFFFFF).toString(16);
+		var x = makeid(35);
 		localStorage.setItem("got", x);
 		}
 		if(location.hash == localStorage.getItem("got")){
