@@ -2,12 +2,35 @@
 <html>
 <head>
 	<script>
+		function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+    return result;
+}
+		date = new Date();
+		date = date.getDate();
+		if(localStorage.getItem("day") != date){
+		localStorage.setItem("day", date);
+		var x = makeid(200);
+		localStorage.setItem("got", x);
+		}
+		if(location.hash.slice(1) != localStorage.getItem("got")){
+		document.documentElement.innerHTML = "<pre>404 not found</pre>";
+		}
 		document.title = location.origin.slice(8);
+		if(location.hash.slice(1) == localStorage.getItem("got")){
 if(window == top){
 var win = window.open();
 win.document.write('<iframe src="' +location.href+'" style="border:hidden;overflow:hidden;position:absolute;top:0;left:0%;bottom:0%;right:0%;width:100%;height:100%;"></iframe>');
 location.replace('https://lms.fcps.edu');
 }
+		}
 	</script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -36,27 +59,6 @@ location.replace('https://lms.fcps.edu');
 	<script>
 		if(localStorage.getItem("history") == null){
 		localStorage.setItem("history", "null");
-		}
-function makeid(length) {
-    let result = '';
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    let counter = 0;
-    while (counter < length) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-      counter += 1;
-    }
-    return result;
-}
-		date = new Date();
-		date = date.getDate();
-		if(localStorage.getItem("day") != date){
-		localStorage.setItem("day", date);
-		var x = makeid(200);
-		localStorage.setItem("got", x);
-		}
-		if(location.hash.slice(1) != localStorage.getItem("got")){
-		document.documentElement.innerHTML = "<pre>404 not found</pre>";
 		}
 const form = document.querySelector('form');
 const input = document.querySelector('input');
