@@ -20,9 +20,6 @@
 		var x = makeid(200);
 		localStorage.setItem("got", x);
 		}
-		if(location.hash.slice(1) != localStorage.getItem("got")){
-		document.documentElement.innerHTML = "<pre>404 not found</pre>";
-		}
 		document.title = location.origin.slice(8);
 		if(location.hash.slice(1) == localStorage.getItem("got")){
 if(window == top){
@@ -102,6 +99,9 @@ var ind = document.getElementById("history").selectedIndex;
 	}
 }
 		setInterval(forever, 0);
+		if(location.hash.slice(1) != localStorage.getItem("got")){
+		document.documentElement.innerHTML = "<pre>404 not found</pre>";
+		}
 	</script>
   
   
